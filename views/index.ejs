@@ -4,7 +4,7 @@
         <h1 class="text-center">Notes</h1>
 
             <div class="card add-note">
-                <form class="note-form">
+                <form action="/" method="POST" class="note-form">
                     <div class="form-group">
                         <input type="text" class="form-control" name="text" placeholder="Enter note">
                         <input type="submit" class="form-control" value="Submit">
@@ -13,21 +13,17 @@
             </div>
 
         <div class="card note-display">
-            <div class="card note">
-                This is an individual note
-            </div>
 
-            <div class="card note">
-                This is an individual note
-            </div>
+            <% data.forEach(note => { %>
+                <div class="card note">
+                <div class="note-content">
+                    <%= note.note %>
+                </div>
+                <a href="/<%= note._id %>" class="btn btn-warning">View note</a>                
+            </div> 
 
-            <div class="card note">
-                This is an individual note
-            </div>
-
-            <div class="card note">
-                This is an individual note
-            </div>
+            <% }) %>
+    
         </div>
         
     </div>

@@ -1,0 +1,11 @@
+<%- include("partials/header") %>
+
+<div class=card>
+    <p><%= note.note %></p>
+    <a href="/<%= note._id %>/edit" class="btn btn-warning">View note</a>
+    <form action="/<%= note._id %>?_method=DELETE" method="POST">
+        <input type="submit" value="delete" class="btn btn-danger">
+    </form> 
+</div>
+
+<%- include("partials/footer") %>
